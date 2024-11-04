@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"android":{"default":{"projectId":"cto-todo-list","appId":"1:249540169673:android:f0b2af53091ada87416218","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"cto-todo-list","configurations":{"android":"1:249540169673:android:f0b2af53091ada87416218","ios":"1:249540169673:ios:7a6655bc516686fa416218"}}}}}}
