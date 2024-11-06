@@ -15,6 +15,10 @@ import 'package:provider/provider.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  void _goToCreateTask(BuildContext context) {
+    Navigator.of(context).pushNamed('task/create');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +36,7 @@ class HomePage extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: context.primaryColor,
-          onPressed: () {},
+          onPressed: () => _goToCreateTask(context),
           child: Icon(Icons.add),
           ),
       drawer: HomeDrawer(),

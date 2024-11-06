@@ -5,6 +5,7 @@ import 'package:cto_todo_list_provider/app/modules/auth/auth_module.dart';
 import 'package:cto_todo_list_provider/app/modules/auth/login/login_controller.dart';
 import 'package:cto_todo_list_provider/app/modules/home/home_module.dart';
 import 'package:cto_todo_list_provider/app/modules/splash/splash_page.dart';
+import 'package:cto_todo_list_provider/app/modules/tasks/task_module.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -38,7 +39,8 @@ class _AppWidgetState extends State<AppWidget> {
       theme: TodoListUiConfig.theme,
       routes: {
         ...AuthModule().routers,
-        ...HomeModule().routers
+        ...HomeModule().routers,
+        ...TaskModule().routers
       },
       home: const SplashPage(),
     );
