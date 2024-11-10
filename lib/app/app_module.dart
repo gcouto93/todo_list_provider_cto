@@ -1,6 +1,7 @@
 import 'package:cto_todo_list_provider/app/app_widget.dart';
 import 'package:cto_todo_list_provider/app/core/auth/auth_provider_app.dart';
 import 'package:cto_todo_list_provider/app/core/database/sqlite_connection_factory.dart';
+import 'package:cto_todo_list_provider/app/core/database/sqlite_migration_factory.dart';
 import 'package:cto_todo_list_provider/app/repositories/user/user_repository.dart';
 import 'package:cto_todo_list_provider/app/repositories/user/user_repository_impl.dart';
 import 'package:cto_todo_list_provider/app/services/user/user_service.dart';

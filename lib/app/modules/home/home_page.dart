@@ -8,6 +8,8 @@ import 'package:cto_todo_list_provider/app/modules/home/widgets/home_header.dart
 import 'package:cto_todo_list_provider/app/modules/home/widgets/home_tasks.dart';
 import 'package:cto_todo_list_provider/app/modules/home/widgets/home_week_filter.dart';
 import 'package:cto_todo_list_provider/app/modules/home/widgets/todo_card_filter.dart';
+import 'package:cto_todo_list_provider/app/modules/tasks/task_create_page.dart';
+import 'package:cto_todo_list_provider/app/modules/tasks/task_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
@@ -16,7 +18,23 @@ class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   void _goToCreateTask(BuildContext context) {
-    Navigator.of(context).pushNamed('task/create');
+    // Navigator.of(context).pushNamed('/task/create');
+    Navigator.of(context).push(
+      PageRouteBuilder(
+        transitionDuration: Duration(milliseconds: 400),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          animation = CurvedAnimation(parent: animation, curve: Curves.easeInQuad);
+          return ScaleTransition(
+            scale: animation,
+            alignment: Alignment.bottomRight,
+            child: child,
+          
+          );
+        },
+        pageBuilder: (context, animation, secondaryAnimation) {
+        return TaskModule().getPage('/task/create', context);
+      },)
+      );
   }
 
   @override
