@@ -12,7 +12,7 @@ class HomeModule extends TodoListModule{
   HomeModule() 
   : super(
     routers: {
-      '/home' : (context) => HomePage(),
+      '/home' : (context) => HomePage(homeController: context.read(),),
     },
      bindings:[
       Provider<TaskRepository>(
