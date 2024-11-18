@@ -42,5 +42,25 @@ TaskRepositoryImpl(
     ]);
     return result.map((e) => TaskModel.LoadFromDB(e)).toList();
   }
+  
+  @override
+  Future<void> chechOrUncheckTask(TaskModel task) async {
+    final conn = await _sqliteConnectionFactory.openConnection();
+    final finished = task.finish ? 1: 0;
+
+    await conn.rawUpdate(
+      'update todo set finalizdo = ? where id = ?',[finished, task.id]);
+  }
+
+  Future<void> deleteTask(TaskModel task) async {
+    final conn = await _sqliteConnectionFactory.openConnection();
+    
+    conn.delete('todo',where: 'id = ?',whereArgs: [task.id]);
+  }
+
+  Future<void> clearDbTasks() async {
+    var conn = await _sqliteConnectionFactory.openConnection();
+    conn.delete('todo');
+  }
 
 }

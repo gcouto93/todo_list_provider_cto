@@ -21,4 +21,18 @@ class TaskModel {
     );
   }
 
+
+  TaskModel copyWith({
+    int? id,
+    String? description,
+    DateTime? dateTime,
+    bool? finish,
+  }) {
+    return TaskModel(
+      id: id ?? this.id,
+      description: description ?? this.description,
+      dateTime: dateTime ?? this.dateTime,
+      finish: finish ?? this.finish,
+    );
+  }
 }
